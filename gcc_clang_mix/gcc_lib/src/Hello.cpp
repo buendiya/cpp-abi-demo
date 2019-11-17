@@ -1,8 +1,10 @@
 #include <iostream>
 
+
 #include "shared/Hello.h"
 
-void Hello::print()
+void Hello::print(std::string name)
 {
-    std::cout << "Hello Shared Library!" << std::endl;
+    // Create a string variable
+    std::cout << "Hello Shared Library! " << "name: " << name << std::endl;
 }

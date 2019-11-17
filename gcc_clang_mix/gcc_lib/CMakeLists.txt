@@ -1,18 +1,21 @@
 cmake_minimum_required(VERSION 3.5)
 
-project(hello_library)
+project(gcc_library)
+
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
+# set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11  -stdlib=libc++")
 
 ############################################################
 # Create a library
 ############################################################
 
 #Generate the shared library from the library sources
-add_library(hello_library SHARED 
+add_library(gcc_library SHARED 
     src/Hello.cpp
 )
-add_library(hello::library ALIAS hello_library)
+add_library(hello::library ALIAS gcc_library)
 
-target_include_directories(hello_library
+target_include_directories(gcc_library
     PUBLIC 
         ${PROJECT_SOURCE_DIR}/include
 )
@@ -22,12 +25,12 @@ target_include_directories(hello_library
 ############################################################
 
 # Add an executable with the above sources
-add_executable(hello_binary
-    src/main.cpp
-)
+# add_executable(hello_binary
+#     src/main.cpp
+# )
 
 # link the new hello_library target with the hello_binary target
-target_link_libraries( hello_binary
-    PRIVATE 
-        hello::library
-)
+# target_link_libraries( hello_binary
+#     PRIVATE 
+#         hello::library
+# )
