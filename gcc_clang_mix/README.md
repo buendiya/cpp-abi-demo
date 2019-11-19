@@ -21,7 +21,7 @@
 
 - 编译 clang_exe 时，不指定 -stdlib, 因此默认用的是 libstdc++.so; clang_lib 的 头文件被编译成: "clang_lib::Hello::print(std::__cxx11::basic_string", 但 libclang_library.so 里对应的symbol 是: clang_lib5Hello5printENSt3__112basic_string; 因此编译失败.
   
-  对应 libgcc_library.so 里的symbol 是： gcc_lib5Hello5printENSt7__cxx1112basic_string
+    对应 libgcc_library.so 里的symbol 是： gcc_lib5Hello5printENSt7__cxx1112basic_string
 
 - 如果编译 clang_exe 时添加 "-stdlib=libc++", 则会因为 gcc_lib 的 print 函数的 std::string 参数编译失败
 
