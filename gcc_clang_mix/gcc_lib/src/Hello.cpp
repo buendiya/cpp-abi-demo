@@ -1,10 +1,12 @@
 #include <iostream>
 
 
-#include "shared/Hello.h"
+#include "shared/Hello_gcc_lib.h"
 
+namespace gcc_lib {
 void Hello::print(std::string name)
 {
-    // Create a string variable
-    std::cout << "Hello Shared Library! " << "name: " << name << std::endl;
+    std::cout << "I am gcc lib! " << "Welcome: " << name << std::endl;
+}
+
 }
