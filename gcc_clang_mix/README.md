@@ -4,10 +4,10 @@
     gcc_lib:   gcc 编译, print 函数有 std::string 参数, 默认不指定 -stdlib
     gcc_lib_2: gcc 编译, print 函数没有参数, 默认不指定 -stdlib
 
-    clang_lib:   gcc 编译, print 函数有 std::string 参数, 默认指定: -stdlib=libc++
-    clang_lib_2: gcc 编译, print 函数没有参数, 默认指定: -stdlib=libc++
+    clang_lib:   clang 编译, print 函数有 std::string 参数, 默认指定: -stdlib=libc++
+    clang_lib_2: clang 编译, print 函数没有参数, 默认指定: -stdlib=libc++
 
-    clang_exe: gcc 编译, 默认不指定 -stdlib
+    clang_exe: clang 编译, 默认不指定 -stdlib
 
 - 不调用 clang_lib 的 print 函数的话，可以正常编译； ldd 可以看到同时链接了: libstdc++.so.6 和 libc++.so.1
 
